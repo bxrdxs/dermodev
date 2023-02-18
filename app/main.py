@@ -37,19 +37,19 @@ else:
         img_array = np.asarray(img)
         img_data[0] = (img_array.astype(np.float64) / 255.0)
 
-        model = load_model('melanoma_model4.h5')
+        model = load_model('https://github.com/bxrdxs/dermodev/blob/master/app/melanoma_model4.h5')
         result = model.predict(img_data)
         finresult = result[0][0] * 100
         
         st.write("Dermoverse Console: {:.2f}%".format(finresult))
         
-        if result >= 0.5:
+        if finresult >= 50:
             st.write("Potentially Malignant")
         else:
             st.write("Potentially Benign")
         
-    if model_btn:
-        run_model(uploaded_image_data)
-        
-        
+
+if model_btn:
+  run_model(uploaded_image_data)
+
         
