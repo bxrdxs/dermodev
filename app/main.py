@@ -22,6 +22,8 @@ st.subheader("The images uploaded should be a close up of the suspect skin anoma
 # code, to enable users to upload the file.
 image = st.file_uploader(label = "Users can uplaod their images here. Note multiple files are not accepted and file type is limited to PNG", type = ['png', 'jpeg'], accept_multiple_files=False,label_visibility="visible")
 
+result = 0
+
 if image is None:
     st.warning("Please Upload a Image")
     st.stop()
@@ -41,16 +43,14 @@ def runModel(img):
 
     model = load_model('melanoma_model4.h5')
     result = model.predict(img_data)
-    
-    
-finresult = result * 100
-
-st.write("Dermoverse Console: ", finresult, "%")
-    
-if result >= 0.5:
-    st.write("Potentially Malignant")
-else:
-    st.write("Potentially Benign")
+    finresult = result * 100
+  
+    st.write("Dermoverse Console: ", finresult, "%")
+   
+    if result >= 0.5:
+        st.write("Potentially Malignant")
+    else:
+        st.write("Potentially Benign")
             
 
 # © Hector Bordas
