@@ -4,7 +4,7 @@ import numpy as np
 from PIL import Image
 import numpy as np 
 from tensorflow.keras.models import load_model
-from tesnorflow.keras.preprocessing import image
+from tensorflow.keras.preprocessing import image
 from PIL import Image, ImageOps
 from tempfile import NamedTemporaryFile
 import io
