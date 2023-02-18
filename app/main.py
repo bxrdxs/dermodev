@@ -47,7 +47,7 @@ finresult = result * 100
 
 st.write("Dermoverse Console: ", finresult, "%")
     
-if result >= 0,5:
+if result >= 0.5:
     st.write("Potentially Malignant")
 else:
     st.write("Potentially Benign")
