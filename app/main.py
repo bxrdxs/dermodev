@@ -32,7 +32,8 @@ else:
     
     st.image(image, caption = image.name, output_format = "auto" )
     modelBtn = st.button("Run Model")
-
+    runModel(image)
+   
 
 def runModel(img):
     # preprocessing the image
@@ -44,9 +45,9 @@ def runModel(img):
     model = load_model('melanoma_model4.h5')
     result = model.predict(img_data)
     finresult = result * 100
-  
+    
     st.write("Dermoverse Console: ", finresult, "%")
-   
+    
     if result >= 0.5:
         st.write("Potentially Malignant")
     else:
