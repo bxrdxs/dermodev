@@ -43,14 +43,14 @@ def runModel(img):
     result = model.predict(img_data)
     
     
- finresult = result * 100
+finresult = result * 100
 
-    st.write("Dermoverse Console: ", finresult, "%")
+st.write("Dermoverse Console: ", finresult, "%")
     
-    if result >= 0,5:
-        st.write("Potentially Malignant")
-    else:
-        st.write("Potentially Benign")
+if result >= 0,5:
+    st.write("Potentially Malignant")
+else:
+    st.write("Potentially Benign")
             
 
 # © Hector Bordas
