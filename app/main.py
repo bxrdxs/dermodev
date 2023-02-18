@@ -24,6 +24,6 @@ else:
     st.image(image, caption = image.name, output_format = "auto" )
     modelBtn = st.button("Run Model")
 
-if modelBtn:
-    answer = runModel(image)
-    st.success(answer);
+#if modelBtn:
+    #answer = runModel(image)
+    #st.success(answer);
