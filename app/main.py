@@ -10,10 +10,10 @@ from tempfile import NamedTemporaryFile
 import io
 
 #Application heading
-st.title("Dermoverse Skin Cancer Detector (V1)")
+st.title("Dermoverse Skin Cancer Detector")
 
 #Brief summary of what the application does
-st.header("by dermoverse.org)")
+st.header("V1.0 by dermoverse.org")
 st.subheader("This application can classify potential skin cancer images into two classes, whether they are benign or malignant")
 
 #Information of what kind of images should be uploaded.
@@ -32,7 +32,6 @@ else:
     
     st.image(image, caption = image.name, output_format = "auto" )
     modelBtn = st.button("Run Model")
-    runModel(uploadedImageData)
    
 
 def runModel(img):
@@ -52,6 +51,10 @@ def runModel(img):
         st.write("Potentially Malignant")
     else:
         st.write("Potentially Benign")
+        
+        
+        
+runModel(image)
             
 
 # © Hector Bordas
