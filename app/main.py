@@ -32,7 +32,7 @@ else:
     
     st.image(image, caption = image.name, output_format = "auto" )
     modelBtn = st.button("Run Model")
-    runModel(image)
+    runModel(uploadedImageData)
    
 
 def runModel(img):
